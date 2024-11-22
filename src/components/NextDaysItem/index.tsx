@@ -22,7 +22,7 @@ export function NextDaysItem({ data }: Props) {
       <h3>{data.weather}</h3>
 
       <p>
-        {data.min}ºc <span>{data.max}ºc</span>
+        {data.min}ºC <span>{data.max}ºC</span>
       </p>
     </div>
   )
