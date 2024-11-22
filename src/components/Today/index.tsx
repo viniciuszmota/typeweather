@@ -1,12 +1,19 @@
-/* eslint-disable react/prop-types */
 import "./styles.css"
 import dayjs from "dayjs"
 
 import { Logo } from "../Logo"
 import { SelectCity } from "../SelectCity"
 import { isDayTime } from "../../utils/isDayTime"
+import { WeatherResponseProps } from "../../services/getWeatherByCity"
+import { CityProps } from "../../services/getCityByNameService"
 
-export function Today({ city, weather, onSearchValue }) {
+interface Props {
+  city: string
+  weather: WeatherResponseProps
+  onSearchValue: (value: CityProps) => void
+}
+
+export function Today({ city, weather, onSearchValue }: Props) {
   const today = dayjs(new Date()).format("dddd, DD [de] MMMM [de] YYYY")
   const isDay = isDayTime()
 
@@ -35,7 +42,7 @@ export function Today({ city, weather, onSearchValue }) {
         </footer>
 
         <p>
-          {weather?.temp_min}ºC / {weather?.temp_max}ºC <span>&#8226;</span>{" "}
+          {weather?.temp_min}ºc / {weather?.temp_max}ºc <span>&#8226;</span>{" "}
           {weather.description}
         </p>
       </div>

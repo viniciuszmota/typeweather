@@ -1,5 +1,5 @@
 import "./styles.css"
 
 export function Spin() {
-  return <div className="loading-spinner" />
+  return <div id="loading-spinner" />
 }
